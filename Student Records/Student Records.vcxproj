@@ -110,6 +110,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="LinkListInterface.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Student.cpp" />
+    <ClCompile Include="StudentList.cpp" />
+    <ClCompile Include="StudentNode.cpp" />
+    <ClCompile Include="Tools.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LinkListInterface.h" />
+    <ClInclude Include="Student.h" />
+    <ClInclude Include="StudentList.h" />
+    <ClInclude Include="StudentNode.h" />
+    <ClInclude Include="Tools.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
