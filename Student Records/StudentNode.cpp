@@ -9,6 +9,8 @@ StudentNode::StudentNode
 
 std::ostream& operator<<(std::ostream& os, const StudentNode& s)
 {
-	return os << "ID: " << s.data_field.getIdNumber()
-		<< "\nName: " << s.data_field.getName() << std::endl;
+	return os	<< "\nID: "		<< s.data_field.getIdNumber	()
+				<< "\nName: "	<< s.data_field.getName		()
+				<< "\nCourse: " << s.data_field.getCourse	()
+				<< std::endl;
 }

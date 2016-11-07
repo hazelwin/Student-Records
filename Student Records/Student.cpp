@@ -4,10 +4,11 @@
 
 namespace student
 {
-	Student::Student(int idNumber, std::string name)
+	Student::Student(int idNumber, std::string name, std::string course)
 	{
 		this->idNumber	= idNumber;
 		this->name		= name;
+		this->course = course;
 	}
 	void Student::setIdNumber(const int & idNumber)
 	{
@@ -16,5 +17,9 @@ namespace student
 	void Student::setName(const std::string name)
 	{
 		this->name = name;
+	}
+	void Student::setCourse(const std::string course)
+	{
+		this->course = course;
 	}
 }

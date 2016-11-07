@@ -29,7 +29,7 @@ public:
 	// Constant memeber function to retrieve the current data:
 	value_type data(void) const { return data_field; } //currently not in use
 
-													   // Functions to retrieve the current link.
+	// Functions to retrieve the current link.
 	const StudentNode* link() const { return link_field; }
 	StudentNode* link() { return link_field; }
 private:

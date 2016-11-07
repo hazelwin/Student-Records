@@ -5,7 +5,8 @@ namespace linklistinterface
 { // namespace open
 	void run(void)
 	{ // run open
-		cout << "Welcome!" << endl;
+		cout << "Welcome!" 
+			 << endl;
 		cout << endl;
 		cout << "A new student linked list has been created..." 
 			 << endl;
@@ -23,13 +24,13 @@ namespace linklistinterface
 	void displayCommands(void)
 	{ // displayCommand open
 		cout << endl;
-		cout << "Legal Commands:" << endl;
-		cout << "a - add student" << endl;
-		cout << "b - delete student" << endl;
-		cout << "c - add course" << endl;
-		cout << "d - delete course" << endl;
-		cout << "p - print student record" << endl;
-		cout << "q - quit" << endl;
+		cout << "Legal Commands:"			<< endl;
+		cout << "a - add student"			<< endl;
+		cout << "b - delete student"		<< endl;
+		cout << "c - add course"			<< endl;
+		cout << "d - delete course"			<< endl;
+		cout << "p - print student record"	<< endl;
+		cout << "q - quit"					<< endl;
 	} // displayCommand close
 
 	void processCommands(StudentList* list, bool &running)
@@ -38,13 +39,13 @@ namespace linklistinterface
 
 		switch (getChar("Enter a command to edit list: "))
 		{
-		case 'a': addStudent(list);				break;
-		case 'b': deleteStudent(list);			break;
-		case 'c': addCourse(list) ;				break;
-		case 'd': deleteCourse(list);			break;
-		case 'p': printStudentRecord(list);		break;
-		case 'q': running = false;				break;
-		default: displayCommands();				break;
+		case 'a': addStudent			(list);			break;
+		case 'b': deleteStudent			(list);			break;
+		case 'c': addCourse				(list) ;		break;
+		case 'd': deleteCourse			(list);			break;
+		case 'p': printStudentRecord	(list);			break;
+		case 'q': running = false;						break;
+		default: displayCommands();						break;
 		}
 	} // processCommands close
 
@@ -55,7 +56,8 @@ namespace linklistinterface
 			getInt("Enter student ID number: "));
 		newStudent.setName(
 			getStringLine("Enter the name of the student: "));
-		
+		newStudent.setCourse(
+			getStringLine("Enter a course name: "));
 
 		list->insert(newStudent);
 	}
