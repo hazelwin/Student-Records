@@ -88,7 +88,7 @@ void StudentList::insert(const value_type& student)
 	std::cout << student.getName() << " has been added to the list." << std::endl;
 }
 
-void StudentList::deleteNode(const value_type& student)
+void StudentList::deleteNode(const int& id)
 {
 	// case 1 - empty list
 	if (head == NULL)
@@ -103,7 +103,7 @@ void StudentList::deleteNode(const value_type& student)
 		// Traverse list to find node to delete
 		while (current != NULL)
 		{
-			if (current->data_field.getIdNumber() == student.getIdNumber()) // found
+			if (current->data_field.getIdNumber() == id) // found
 			{
 				break;
 			}
@@ -117,7 +117,7 @@ void StudentList::deleteNode(const value_type& student)
 		// case 2 - Node with "student" not found in list
 		if (current == NULL)
 		{
-			std::cout << "Student with student \"" << student.getName() 
+			std::cout << "Student with ID number: \"" << id 
 				<< "\" not found!" << std::endl;
 		}
 		else
@@ -139,8 +139,10 @@ void StudentList::deleteNode(const value_type& student)
 			delete current;
 			size--;
 
-			std::cout << student.getName() 
-				<< " has been deleted from the list." << std::endl;
+			std::cout	<< "Student with ID number " 
+						<< id 
+						<< " has been deleted from the list." 
+						<< std::endl;
 		}
 	}
 }

@@ -64,10 +64,7 @@ namespace linklistinterface
 
 	void deleteStudent(StudentList * list)
 	{
-		/*std::string name = 
-			getString("Enter the name of the student to delete: ");
-		list->deleteNode(name);*/
-		cout << "Deleting student..." << endl;
+		list->deleteNode(getInt("Enter the students ID number: "));
 		
 	}
 

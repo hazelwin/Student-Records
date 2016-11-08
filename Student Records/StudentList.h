@@ -14,7 +14,7 @@ public:
 	void addToHead(const value_type& name = value_type());
 	void printList(void);
 	void insert(const value_type& name = value_type());
-	void deleteNode(const value_type& name = value_type());
+	void deleteNode(const int& id);
 
 private:
 	StudentNode* head;
