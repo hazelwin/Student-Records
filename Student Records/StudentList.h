@@ -8,13 +8,15 @@
 class StudentList
 {
 public:
-	typedef Student value_type;
+	typedef std::string value_type;
 
 	StudentList();
-	void addToHead(const value_type& name = value_type());
+	void addToHead(const value_type& id, const value_type& name, const value_type& course);
 	void printList(void);
-	void insert(const value_type& name = value_type());
-	void deleteNode(const int& id);
+	void insert(const value_type& id, const value_type& name, const value_type& course);
+	void deleteNode(const value_type& id, const value_type& name);
+	void addCourse(const value_type& id, const value_type& course);
+	void deleteCourse(const value_type& id, const value_type& course);
 
 private:
 	StudentNode* head;

@@ -14,6 +14,8 @@ namespace linklistinterface
 	void addCourse(StudentList* list);
 	void deleteCourse(StudentList* list);
 	void printStudentRecord(StudentList* list);
+
+	
 }
 
 #endif

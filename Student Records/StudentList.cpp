@@ -6,9 +6,9 @@ StudentList::StudentList()
 	:head(NULL), size(0)
 {}
 
-void StudentList::addToHead(const value_type& student)
+void StudentList::addToHead(const value_type& id, const value_type& name, const value_type& course)
 {
-	StudentNode* newOne = new StudentNode(student);
+	StudentNode* newOne = new StudentNode(id, name, course);
 
 	if (head == NULL)
 	{
@@ -16,7 +16,6 @@ void StudentList::addToHead(const value_type& student)
 	}
 	else
 	{
-		//newOne->link_field = head;
 		newOne->set_link(head);
 		head = newOne;
 	}
@@ -32,15 +31,13 @@ void StudentList::printList(void)
 	while (coursor != NULL)
 	{
 		std::cout << *coursor << std::endl;
-		//coursor = coursor->link_field;
 		coursor = coursor->link();
 	}
-	//std::cout << "Printing record..." << std::endl;
 }
 
-void StudentList::insert(const value_type& student)
+void StudentList::insert(const value_type& id, const value_type& name, const value_type& course)
 {
-	StudentNode* newNode = new StudentNode(student);
+	StudentNode* newNode = new StudentNode(id, name, course);
 
 	// Case 1 - empty list
 	if (head == NULL)
@@ -55,41 +52,39 @@ void StudentList::insert(const value_type& student)
 		// Traverse list to find insert location
 		while (current != NULL)
 		{
-			if (current->data_field.getIdNumber() 
-				>= newNode->data_field.getIdNumber())
+			if (current->id 
+				>= newNode->id)
 			{
 				break;
 			}
 			else
 			{
 				trail = current;
-				//current = current->link_field;
 				current = current->link();
 			}
 		}
 		// Case 2 - insert at head (not empty)
 		if (current == head)
 		{
-			//newNode->link_field = head;
 			newNode->set_link(head);
 			head = newNode;
 		}
 		else
 		{
 			// Case 3 - insert after the head (not empty)
-			//newNode->link_field = current;
 			newNode->set_link(current);
-			//trail->link_field = newNode;
 			trail->set_link(newNode);
 		}
 
 	}
 	size++;
-	std::cout << student.getName() << " has been added to the list." << std::endl;
+	std::cout << name << " has been added to the list." << std::endl;
 }
 
-void StudentList::deleteNode(const int& id)
+void StudentList::deleteNode(const value_type& id, const value_type& name)
 {
+	StudentNode* newNode;
+
 	// case 1 - empty list
 	if (head == NULL)
 	{
@@ -103,7 +98,7 @@ void StudentList::deleteNode(const int& id)
 		// Traverse list to find node to delete
 		while (current != NULL)
 		{
-			if (current->data_field.getIdNumber() == id) // found
+			if (current->id == id) // found
 			{
 				break;
 			}
@@ -117,7 +112,7 @@ void StudentList::deleteNode(const int& id)
 		// case 2 - Node with "student" not found in list
 		if (current == NULL)
 		{
-			std::cout << "Student with ID number: \"" << id 
+			std::cout << "Student with student \"" << name 
 				<< "\" not found!" << std::endl;
 		}
 		else
@@ -139,10 +134,98 @@ void StudentList::deleteNode(const int& id)
 			delete current;
 			size--;
 
-			std::cout	<< "Student with ID number " 
-						<< id 
-						<< " has been deleted from the list." 
-						<< std::endl;
+			std::cout << name 
+				<< " has been deleted from the list." << std::endl;
+		}
+	}
+}
+
+void StudentList::addCourse(const value_type & id, const value_type & course)
+{
+	StudentNode* newNode;
+
+	// case 1 - empty list
+	if (head == NULL)
+	{
+		std::cout << "Error: The list is empty." << std::endl;
+	}
+	else
+	{
+		StudentNode* current = head;
+		StudentNode* trail = NULL;
+
+		// Traverse list to find node to delete
+		while (current != NULL)
+		{
+			if (current->id == id) // found
+			{
+				break;
+			}
+			else // continue looking
+			{
+				trail = current;
+				current = current->link();
+			}
+		}
+		// case 2 - Node with "student" not found in list
+		if (current == NULL)
+		{
+			std::cout << "Student with student ID number:  \"" << id
+				<< "\" not found!" << std::endl;
+		}
+		else
+		{
+			current->course = course;
+
+			std::cout << course
+				<< " has been added to student with ID number: "
+				<< id << "."
+				<< std::endl;
+		}
+	}
+}
+
+void StudentList::deleteCourse(const value_type & id, const value_type & course)
+{
+	StudentNode* newNode;
+
+	// case 1 - empty list
+	if (head == NULL)
+	{
+		std::cout << "Error: The list is empty." << std::endl;
+	}
+	else
+	{
+		StudentNode* current = head;
+		StudentNode* trail = NULL;
+
+		// Traverse list to find node to delete
+		while (current != NULL)
+		{
+			if (current->id == id) // found
+			{
+				break;
+			}
+			else // continue looking
+			{
+				trail = current;
+				current = current->link();
+			}
+		}
+		// case 2 - Node with "student" not found in list
+		if (current == NULL)
+		{
+			std::cout << "Student with student ID number:  \"" << id
+				<< "\" not found!" << std::endl;
+		}
+		else
+		{
+			current->course = "none";
+
+			std::cout << course
+				<< " has been deleted from student record with ID number: "
+				<< id << "."
+				<< std::endl;
 		}
 	}
 }

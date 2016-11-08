@@ -1,5 +1,4 @@
 // Main.cpp
-
 #include"LinkListInterface.h"
 
 using namespace linklistinterface;
