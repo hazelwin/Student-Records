@@ -10,6 +10,17 @@ void pause( string prompt )
 	flushInput();
 }
 
+void errorEmptyList(void)
+{
+	std::cout << "Error: The list is empty." << std::endl;
+}
+
+void errorStudentNotFound(std::string identifier)
+{
+	std::cout << "Student with student \"" << identifier
+		<< "\" not found!" << std::endl;
+}
+
 void flushInput(void)
 {
 	cin.ignore(999,'\n');

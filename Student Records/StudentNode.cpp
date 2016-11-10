@@ -13,8 +13,8 @@ StudentNode::StudentNode
 
 std::ostream& operator<<(std::ostream& os, const StudentNode& s)
 {
-	return os << "ID: " << s.id 
-		<< "\nName: "	<< s.name 
-		<< "\nCourse: " << s.course 
-		<< std::endl;
+	return os	<< "ID: "		<< s.id 
+				<< "\nName: "	<< s.name 
+				<< "\nCourse: " << s.course 
+				<< std::endl;
 }

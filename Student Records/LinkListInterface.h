@@ -2,7 +2,7 @@
 #define LINKLISTINTERFACE_LOCK
 
 #include"StudentList.h"
-#include"Tools.h"
+//#include"Tools.h"
 
 namespace linklistinterface
 {
@@ -14,8 +14,6 @@ namespace linklistinterface
 	void addCourse(StudentList* list);
 	void deleteCourse(StudentList* list);
 	void printStudentRecord(StudentList* list);
-
-	
 }
 
 #endif

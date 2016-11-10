@@ -1,4 +1,4 @@
-// ContactList.h
+// StudentList.h
 
 #ifndef STUDENTLIST_LOCK
 #define STUDENTLIST_LOCK
